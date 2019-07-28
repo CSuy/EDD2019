@@ -58,9 +58,21 @@ public class Lista_Bolsa {
         }
     }
     
+    public String mostrar1(){
+        String cadena ="";
+        Nodo_Bolsa aux=inicio;
+        int contador=1;
+        while(aux.getSiguiente()!=null && contador<=tam){
+            cadena=cadena+"En X: " + aux.getX() + " En Y: "+aux.getY()+"\n";
+            aux= aux.getSiguiente();
+            contador++;
+        }
+        return cadena;
+    }
+    
     public int contar(int cnt){
         int resultado=tam;
-        if(cnt<resultado){
+        if(cnt<=resultado && cnt>=0){
             resultado=resultado-cnt;
         }else if(cnt<0){
             JOptionPane.showMessageDialog(null,"No ingresar numero negativos");
